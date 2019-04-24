@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<?php
+    session_start();
+    include_once("db.php");
+?>
+
 <html lang="sv">
 <head>
     <meta charset="utf-8">
@@ -7,6 +12,27 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+  
+  <?php
+      $sql = "SELECT * FROM posts ORDER BY id DESC":
+      
+      $res = mysqli_query($db, $sql) or die(mysqli_error());
+      
+      $posts="";
+      
+      if(mysqli_num_rows($res) > 0){
+        while($row = mysqli_fetch_assoc($res)) {
+          $id = $row['id']:
+          $title = $row['title']:
+          $content = $row['content']:
+          $date = $row['date']:
+          
+          $admin = "";
+           
+        }
+      }
+  ?>
+  
   <div id="wrapper">
     <!--Ska ligga i egen fil-->
     <header>
